@@ -1,3 +1,7 @@
+# 데이터 = penguins
+# K = 5
+# 특징 수 = 2
+# 클래스 수 = 3
 import seaborn as sns
 
 penguins = sns.load_dataset('penguins') # seaborn에서 penguins 데이터 가져오기
@@ -16,7 +20,7 @@ print(t['species'].unique()) # 데이터 species 확인
 t[t['species'] == 'Adelie'] = 0
 t[t['species'] == 'Chinstrap'] = 1
 t[t['species'] == 'Gentoo'] = 2
-print(t['species'].unique())
+print(t['species'].unique()) # 데이터 확인
 t = t['species'].astype("int")
 
 
@@ -28,27 +32,23 @@ train_data, test_data, train_target, test_target = train_test_split(
 ) # 학습 데이터 테스트 데이터 분류 비율은 7:3 / train_data,test_data 데이터 분포도 일정
 
 from sklearn.neighbors import KNeighborsClassifier
-kn = KNeighborsClassifier()
+kn = KNeighborsClassifier() #초기값 neighbors = 5 설정
 kn.fit(train_data,train_target)
 print("Train-Eval:", kn.score(train_data, train_target))
 print("Test-Eval:", kn.score(test_data, test_target))
 
 # 데이터 시각화
 import matplotlib.pyplot as plt
-bill_length = data[['bill_length_mm']]
-flipper_length = data[['flipper_length_mm']]
+train_bill_length = train_data[['bill_length_mm']]
+train_flipper_length = train_data[['flipper_length_mm']]
+test_bill_length = test_data[['bill_length_mm']]
+test_flipper_length = test_data[['flipper_length_mm']]
 
-plt.scatter(bill_length,flipper_length)
 
-# x축,y축 및 title 이름 변경
-plt.xlabel("bill_length_mm")
-plt.ylabel("flipper_length_mm")
-plt.title("Penguins Data")
-
-# 표 출력
+# train_data 시각화 출력
+plt.scatter(train_bill_length,train_flipper_length,c=train_target)
 plt.show()
 
-#sns.set_theme()
-#sns.pairplot(flight, hue = 'passengers')
-#import matplotlib.pyplot as plt
-#plt.show()
+# test_data 시각화 출력
+plt.scatter(test_bill_length,test_flipper_length, marker="^", c=test_target)
+plt.show()
