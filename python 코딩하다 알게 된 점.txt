@@ -1,0 +1,6 @@
+iris.drop(inplace=False)
+
+drop 함수에서 inplace 기본값은 False이다
+False인 경우 drop한 데이터 프레임을 return 해준다
+True인 경우 drop한 데이터 프레임을 그대로 저장한다.
+
