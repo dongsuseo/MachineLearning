@@ -1,0 +1,3 @@
+Found input variables with inconsistent numbers of samples:
+=>split할 때 내가 따로 배놓은 t와 data 의 행의 개수가 일치하지
+않아서 나오는 오류
