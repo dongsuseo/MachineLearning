@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 train_data, test_data, train_target, test_target = train_test_split(
     data, t, test_size=0.3, random_state=42, stratify=t
 )
+
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 # scaler.fit
