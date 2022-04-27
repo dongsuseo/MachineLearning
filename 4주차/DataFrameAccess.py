@@ -8,6 +8,8 @@ import pandas as pd # pandas pd로 임포트
 
 df = pd.DataFrame(dict_data) #pandas의 데이터프레임만들어주는 함수 사용
 
+print(dict_data)
+print(df)
 
 df.columns = ['Top-Player', 'Nationallity'] #데이터프레임 열 변수 바꿔주기
 df.index = ['1st', '2nd', '3rd', '4th'] #데이터프레임 인덱스 바꿔주기
