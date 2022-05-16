@@ -22,7 +22,7 @@ print('Test-Eval:', dt.score(test_data, test_target))
 from sklearn.metrics import confusion_matrix
 conf = confusion_matrix(test_target,dt.predict(test_data))
 print(conf)
-
+tr
 
 import matplotlib.pyplot as plt
 from sklearn import tree  # 의사결정나무 시각화
