@@ -18,6 +18,10 @@ from sklearn.model_selection import GridSearchCV
 gs = GridSearchCV(KNeighborsClassifier(), params, cv = 10)
 
 gs.fit(train_data, train_target)
+<<<<<<< HEAD
+=======
+print(gs.best_estimator_) # 하이퍼파라미터 출력
+>>>>>>> f370e010f9ef5905ea1ce8922c7054e2c6078772
 kn = gs.best_estimator_
 
 print(kn.score(train_data, train_target))
